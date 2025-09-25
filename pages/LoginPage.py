@@ -7,7 +7,7 @@ import allure
 class LoginPageLocators:
     LOGIN_FIELD = (By.XPATH,"(//input[@placeholder='Логин'])")
     PASSWORD_FIELD = (By.XPATH,"(//input[@placeholder='Пароль'])")
-    BUTTON_SEND = (By.XPATH,"(//*[@class='block']")
+    BUTTON_SEND = (By.XPATH,"(//*[@class='block'])")
 
 
 
@@ -33,7 +33,8 @@ class LoginPageHelper(BasePage):
         self.find_element(LoginPageLocators.PASSWORD_FIELD).send_keys(password)
         self.attach_screenshot()
 
-    @allure.step("Переходим к регистрации")
-    def click_registration(self):
+    @allure.step("Нажимаем на кнопку Войти")
+    def click_login(self):
         self.attach_screenshot()
-        self.find_element(LoginPageLocators.BUTTON_SEND).click()
+        button_login = self.find_element(LoginPageLocators.BUTTON_SEND)
+        button_login.click()
