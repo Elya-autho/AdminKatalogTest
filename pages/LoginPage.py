@@ -7,7 +7,7 @@ import allure
 class LoginPageLocators:
     LOGIN_FIELD = (By.XPATH,"(//input[@placeholder='Логин'])")
     PASSWORD_FIELD = (By.XPATH,"(//input[@placeholder='Пароль'])")
-    BUTTON_SEND = (By.XPATH,"(//*[@class='block'])")
+    BUTTON_SEND = (By.XPATH,'//*[@id="loginForm"]/button')
 
 
 
